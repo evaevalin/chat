@@ -1,0 +1,35 @@
+#先讀取檔案
+def read_file(filename):
+	lines = []
+	with open(filename, 'r') as f:
+		for line in f:
+			lines.append(line.strip())
+		return lines
+
+#把每一行分開 姓名 引號
+def convert(lines):
+    new = []
+    person = None
+    for line in lines:
+   
+        if line == 'Allen':
+            person = 'Allen'
+            continue
+        elif line == 'Tom':
+            person = 'Tom'
+            continue
+        if person:  #如果person有數值
+            new.append(person +': ' + line)
+    return new
+
+def write_file(filename, lines):
+	with open(filename, 'w') as f:
+		for line in lines:
+			f.write(line + '\n')
+
+#寫成main
+def main():
+    lines = read_file()
+    lines = convert(lines)   #很重要
+    write_file('output.txt', lines)
+main()
