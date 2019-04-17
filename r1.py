@@ -29,7 +29,7 @@ def write_file(filename, lines):
 
 #寫成main
 def main():
-    lines = read_file()
+    lines = read_file('input.txt')
     lines = convert(lines)   #很重要
     write_file('output.txt', lines)
 main()
